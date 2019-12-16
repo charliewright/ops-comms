@@ -1,5 +1,8 @@
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+## Mocks
+![Ops Coms Mocks](client-detail-view.png)
+
 ## Available Scripts
 
 In the project directory, you can run:
