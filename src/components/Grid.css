@@ -1,0 +1,39 @@
+.row {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  width: 100%;
+}
+
+.column {
+  display: flex;
+  flex-direction: column;
+  flex-basis: 100%;
+  flex: 1;
+  flex-grow: 2;
+  padding: 5px;
+}
+
+.half {
+  flex-grow:1;
+}
+
+.orange {
+  background-color: lightcoral;
+  height: 600px;
+}
+
+.blue {
+  background-color: lightblue;
+  height: 600px;
+}
+
+.green {
+  background-color: lightgreen;
+  height: 600px;
+}
+
+.purple {
+  background-color: lightpink;
+  height: 600px;
+}
