@@ -17,7 +17,7 @@ const App = () => {
           <Column color={"green"} text={"communications with pro"}>
           <ProConvo></ProConvo>
           </Column>
-          <Column color={"purple"} text={"sow view/toggle to hotkeys"}></Column>
+          <Column color={"purple"} class="half" text={"sow view/toggle to hotkeys"}></Column>
         </Row>
       </div>
     </div>
