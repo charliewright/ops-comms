@@ -3,8 +3,8 @@ import "./Grid.css";
 
 export const Column = props => {
   return (
-    <div class={"column " + props.class}>
-      <div class={props.color}>{props.text}</div>
+    <div class={"column " + props.class + " " + props.color}>
+        {props.children || props.text}
     </div>
   );
 };
