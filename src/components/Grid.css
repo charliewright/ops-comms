@@ -12,6 +12,7 @@
   flex: 1;
   flex-grow: 2;
   padding: 5px;
+  margin: 5px;
 }
 
 .half {
@@ -24,7 +25,7 @@
 }
 
 .blue {
-  background-color: lightblue;
+  background-color: lightcyan;
   height: 600px;
 }
 

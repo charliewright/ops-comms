@@ -1,31 +1,31 @@
 import React from "react";
 import {Bubble} from "./bubble"
 
-const fromClient = {
+const fromPro = {
   color: "",
-  sender: "Client",
+  sender: "Steve Hache",
   time: "12:00 PM",
   date: "Dec 12",
-  comm: "sms",
+  comm: "email",
   content: "Hey Divy, appreciate blah blah blah"
 };
 
 const fromOps = {
-  color: "lightblue",
+  color: "lightgoldenrodyellow",
   sender: "Divy",
   time: "12:00 PM",
   date: "Dec 12",
-  comm: "sms",
+  comm: "email",
   content: "Hey Client, appreciate blah blah blah"
 };
 
-export const ClientConvo = props => {
+export const ProConvo = props => {
   return (
     <React.Fragment>
       <Bubble {...fromOps}></Bubble>
-      <Bubble {...fromClient}></Bubble>
+      <Bubble {...fromPro}></Bubble>
       <Bubble {...fromOps}></Bubble>
-      <Bubble {...fromClient}></Bubble>
+      <Bubble {...fromPro}></Bubble>
     </React.Fragment>
   );
 };

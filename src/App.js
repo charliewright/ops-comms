@@ -1,6 +1,8 @@
 import React from "react";
 import { Column, Row } from "./components/grid";
 import { ClientConvo } from "./components/clientConvo";
+import { ProConvo } from "./components/proConvo";
+
 import "./App.css";
 
 const App = () => {
@@ -12,7 +14,9 @@ const App = () => {
           <Column color={"orange"} text={"communications with client"}>
             <ClientConvo></ClientConvo>
           </Column>
-          <Column color={"green"} text={"communications with pro"}></Column>
+          <Column color={"green"} text={"communications with pro"}>
+          <ProConvo></ProConvo>
+          </Column>
           <Column color={"purple"} text={"sow view/toggle to hotkeys"}></Column>
         </Row>
       </div>

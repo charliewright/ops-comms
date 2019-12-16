@@ -1,14 +1,14 @@
 import React from "react";
 
 export const Bubble = props => {
-  const { blueBubble, sender, time, date, comm, content } = props;
+  const { color, sender, time, date, comm, content } = props;
 
   return (
     <div
       style={{
         padding: "15px",
         marginBottom: "10px",
-        backgroundColor: blueBubble ? "lightseagreen" : "white"
+        backgroundColor: color ? color : "white"
       }}
     >
       <div style={{ height: "30px" }}>
