@@ -1,7 +1,8 @@
 import React from "react";
 import { Column, Row } from "./components/grid";
-import { ClientConvo } from "./components/clientConvo";
-import { ProConvo } from "./components/proConvo";
+import { clientConversation } from "./data/clientConversation";
+import { proConversation } from "./data/proConversation";
+import { ConversationThread } from "./components/conversationThread";
 
 import "./App.css";
 
@@ -12,10 +13,10 @@ const App = () => {
         <Row>
           <Column color={"blue"} class="half" text={"list of tickets"}></Column>
           <Column color={"orange"} text={"communications with client"}>
-            <ClientConvo></ClientConvo>
+          <ConversationThread thread={clientConversation}></ConversationThread>
           </Column>
-          <Column color={"green"} text={"communications with pro"}>
-          <ProConvo></ProConvo>
+          <Column color={"green"}>
+          <ConversationThread thread={proConversation}></ConversationThread>
           </Column>
           <Column color={"purple"} class="half" text={"sow view/toggle to hotkeys"}></Column>
         </Row>

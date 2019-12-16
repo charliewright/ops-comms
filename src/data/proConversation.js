@@ -1,6 +1,3 @@
-import React from "react";
-import {Bubble} from "./bubble"
-
 const fromPro = {
   color: "",
   sender: "Steve Hache",
@@ -19,13 +16,4 @@ const fromOps = {
   content: "Hey Client, appreciate blah blah blah"
 };
 
-export const ProConvo = props => {
-  return (
-    <React.Fragment>
-      <Bubble {...fromOps}></Bubble>
-      <Bubble {...fromPro}></Bubble>
-      <Bubble {...fromOps}></Bubble>
-      <Bubble {...fromPro}></Bubble>
-    </React.Fragment>
-  );
-};
+export const proConversation = [fromPro, fromOps, fromPro, fromOps];
