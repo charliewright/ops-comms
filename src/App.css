@@ -1,6 +1,10 @@
 .App {
   margin: 15px;
 }
+.App:focus {
+  outline: none !important;
+  outline-offset: none !important;
+}
 
 .App-link {
   color: #61dafb;
