@@ -19,24 +19,9 @@ export class ConversationThread extends React.Component {
     };
 
     if (messageType === "Mobile") {
-      alert("green sent to a mobile user");
+      // alert("green sent to a mobile user");
       axios.post("https://api.setter.com/public/v1/push-notifications", body);
     }
-  };
-
-  addToQueue = (messageContent, messageType) => {
-    const newArray = this.state.thread.slice();
-    const oneItem = this.state.thread.slice(-1)[0];
-    const fromOps = {
-      color: oneItem.color,
-      sender: oneItem.sender,
-      time: new Date().toLocaleString().slice(12), // time, rather than date
-      date: "Dec 12",
-      comm: messageType,
-      content: messageContent
-    };
-
-    this.setState({ thread: [fromOps].concat(newArray) });
   };
 
   sendMessage = (messageContent, messageType) => {

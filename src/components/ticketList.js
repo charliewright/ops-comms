@@ -9,7 +9,7 @@ export const TicketList = props => {
     <React.Fragment>
       <TicketHeader />
       {tickets.map(ticket => (
-        <Ticket {...ticket}></Ticket>
+        <Ticket selectTicket={props.selectTicket} {...ticket}></Ticket>
       ))}
     </React.Fragment>
   );

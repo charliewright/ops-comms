@@ -25,6 +25,7 @@ export const Ticket = props => {
         backgroundColor: "white",
         cursor: "pointer"
       }}
+      onClick={() => props.selectTicket(id)}
     >
       <Circle status={circleColor}></Circle>
       <div style={{ color: "darkblue" }}> {client} </div>

@@ -1,5 +1,5 @@
 const ticket1 = {
-    id: 1,
+    id: 0,
     jobType: "Plumbing diagnostic",
     client: "Bruno Soares",
     tier: "Tier 1" ,
@@ -11,8 +11,19 @@ const ticket1 = {
     closingPercentage: "%90"
   };
 
-
   const ticket2 = {
+    id: 1,
+    jobType: "Home Visit",
+    client: "Peter Thiel",
+    tier: "Tier 1" ,
+    setterProtect: true,
+    status: "Quoting",
+    awaiting: "-",
+    estimatedValue: "$0",
+    closingPercentage: "%30"
+  };
+
+  const ticket3 = {
     id: 2,
     jobType: "Rios Deck Job",
     client: "Bruno Soares",
@@ -24,7 +35,7 @@ const ticket1 = {
     closingPercentage: "%30"
   };
 
-  const ticket3 = {
+  const ticket4 = {
     id: 3,
     jobType: "Drywall Repair",
     client: "Bruno Soares",
@@ -36,7 +47,7 @@ const ticket1 = {
     closingPercentage: "%60"
   };
 
-  const ticket4 = {
+  const ticket5 = {
     id: 4,
     jobType: "Trash Pickup",
     client: "Justin Porter",
@@ -48,18 +59,6 @@ const ticket1 = {
     closingPercentage: "%60"
   };
 
-
-  const ticket5 = {
-    id: 5,
-    jobType: "Home Visit",
-    client: "Bruno Soares",
-    tier: "Tier 1" ,
-    setterProtect: true,
-    status: "Quoting",
-    awaiting: "-",
-    estimatedValue: "$0",
-    closingPercentage: "%30"
-  };
   
   
-  export const tickets = [ticket1,ticket5, ticket2, ticket3, ticket4]
+  export const tickets = [ticket1, ticket2, ticket3, ticket4, ticket5]

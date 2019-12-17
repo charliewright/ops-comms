@@ -6,17 +6,19 @@ import {ticketInfo} from "./data/ticketInfo"
 import {ClientDetailsView} from "./components/clientDetails"
 
 import "./App.css";
-import { ActionList } from "./components/actionList";
+import { tickets } from "./data/tickets";
 
 class App extends React.Component {
   constructor(props) {
     super(props);
-    debugger
-    this.state = { toggleHotkeys: false, selectedTicket : {...ticketInfo[0]}  };
+    this.state = { toggleHotkeys: false, selectedTicket : {...ticketInfo[0], ticket: tickets[0] }  };
   }
 
-  changeTicket = (id) => {
-    this.setState({selectedTicket: {}})
+  selectTicket = (id) => {
+    // console.log(ticketInfo[id])
+    const newState = {selectedTicket: {...ticketInfo[id], ticket: tickets[id] }}
+    console.log(newState.selectedTicket.clientConversation[0])
+    this.setState(newState)
   }
 
   keyPressed = e => {
@@ -34,6 +36,8 @@ class App extends React.Component {
   };
 
   render = () => {
+    const pageTitle = `${this.state.selectedTicket.ticket.client} - ${this.state.selectedTicket.ticket.jobType}`
+    debugger
     return (
       <div
         className="App"
@@ -41,9 +45,11 @@ class App extends React.Component {
         onKeyDown={this.keyPressed}
         onKeyUp={this.keyReleased}
       >
+        { this.state.toggleHotkeys ? <div>modal thing</div> : null}
+        <h1 style={{textAlign: "center"}}>{pageTitle}</h1>
         <Row>
           <Column color={"blue"} class="half">
-            <TicketList />
+            <TicketList selectTicket={this.selectTicket}/>
           </Column>
           <Column>
             <ConversationThread
@@ -54,7 +60,7 @@ class App extends React.Component {
             <ConversationThread thread={this.state.selectedTicket.proConversation}></ConversationThread>
           </Column>
           <Column class="half">
-            {this.state.toggleHotkeys ? <ActionList/> : <ClientDetailsView/>}
+            <ClientDetailsView/>
           </Column>
         </Row>
       </div>
