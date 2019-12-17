@@ -11,11 +11,20 @@ export class ConversationThread extends React.Component {
     this.state = { thread: props.thread };
   }
 
-  addMessage = messageContent => {
-    const fromOps = this.state.thread.slice(-1)[0]
-    fromOps.content= messageContent
-    fromOps.time = (new Date().toLocaleString()).slice(12) // time, rather than date
-    this.setState({thread: [fromOps].concat(this.state.thread)})
+  addMessage = (messageContent, messageType) => {
+
+    const newArray = this.state.thread.slice()
+    const oneItem = this.state.thread.slice(-1)[0]
+    const fromOps = {
+      color: oneItem.color,
+      sender: oneItem.color,
+      time: new Date().toLocaleString().slice(12), // time, rather than date
+      date: "Dec 12",
+      comm: messageType,
+      content: messageContent
+    };
+
+    this.setState({thread: [fromOps].concat(newArray) })
   }
 
   render = () => {
