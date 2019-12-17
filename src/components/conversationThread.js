@@ -13,15 +13,14 @@ export class ConversationThread extends React.Component {
     const body = {
       type: "seasonal_campaign",
       client_id: 24085,
-      noti_title: "New message from Meghna",
+      noti_title: "New message from Meghna (Setter)",
       noti_body: messageContent,
       seasonal_campaign_id: 1
     };
 
-    if ((messageType = "Mobile")) {
-      axios.post("https://api.setter.com/public/v1/push-notifications", body);
-
+    if (messageType === "Mobile") {
       alert("green sent to a mobile user");
+      axios.post("https://api.setter.com/public/v1/push-notifications", body);
     }
   };
 
