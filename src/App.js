@@ -4,6 +4,7 @@ import { clientConversation } from "./data/clientConversation";
 import { proConversation } from "./data/proConversation";
 import { ConversationThread } from "./components/conversationThread";
 import { TicketList } from "./components/ticketList";
+import {ClientDetailsView} from "./components/clientDetails"
 
 import "./App.css";
 import { ActionList } from "./components/actionList";
@@ -40,16 +41,16 @@ class App extends React.Component {
           <Column color={"blue"} class="half">
             <TicketList />
           </Column>
-          <Column color={"orange"}>
+          <Column>
             <ConversationThread
               thread={clientConversation}
             ></ConversationThread>
           </Column>
-          <Column color={"green"}>
+          <Column>
             <ConversationThread thread={proConversation}></ConversationThread>
           </Column>
-          <Column color={"purple"} class="half">
-            {this.state.toggleHotkeys && <ActionList />}
+          <Column class="half">
+            {this.state.toggleHotkeys ? <ActionList/> : <ClientDetailsView/>}
           </Column>
         </Row>
       </div>

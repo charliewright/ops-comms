@@ -1,6 +1,6 @@
 import React from "react";
 import {MessageWithTimeStamp} from './messageWithTimestamp'
-import { SendComm } from "./sendComm";
+import { EditableTextArea } from "./editableTextArea";
 
 export const ConversationThread = props => {
   return (
@@ -8,7 +8,7 @@ export const ConversationThread = props => {
       {props.thread.map(message => (
         <MessageWithTimeStamp message={message}></MessageWithTimeStamp>
       ))}
-      <SendComm></SendComm>
+      <EditableTextArea/>
     </React.Fragment>
   );
 };

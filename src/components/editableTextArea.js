@@ -3,11 +3,8 @@ import TextareaAutosize from "@material-ui/core/TextareaAutosize";
 import { Button } from "@material-ui/core";
 import MailOutlineIcon from '@material-ui/icons/Email';
 
-export default function EmptyTextarea() {
-  return;
-}
 
-export const SendComm = props => {
+export const EditableTextArea = props => {
   return (
     <span>
       <MailOutlineIcon style={{verticalAlign:"top"}}fontSize="large"/>
