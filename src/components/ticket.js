@@ -15,6 +15,7 @@ export const Ticket = props => {
 
   return (
     <div
+      class="card"
       style={{
         padding: "15px",
         marginBottom: "10px",
@@ -22,7 +23,7 @@ export const Ticket = props => {
       }}
     >
       <div style={{ color: "darkblue" }}> {client} </div>
-      <div style={{marginTop: "10px"}}>{jobType}</div>
+      <div style={{ marginTop: "10px" }}>{jobType}</div>
       <div>{status}</div>
       <div>{awaiting}</div>
     </div>

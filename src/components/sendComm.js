@@ -10,7 +10,7 @@ export const SendComm = props => {
   return (
     <span>
       <span style={{verticalAlign:"top"}}>✉️</span>
-      <TextareaAutosize rowsMin={3} style={{width: "90%"}}></TextareaAutosize>
+      <TextareaAutosize rowsMin={5} style={{width: "90%"}}></TextareaAutosize>
       <div style={{margin: "10px", textAlign: "center"}}>
         <Button variant="contained" color="primary">Send</Button>
       </div>

@@ -6,6 +6,7 @@ export const Action = props => {
   return (
     <div
       onClick={action}
+      class="card"
       style={{
         padding: "15px",
         marginBottom: "10px",

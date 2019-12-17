@@ -5,6 +5,7 @@ export const Bubble = props => {
 
   return (
     <div
+      class="card"
       style={{
         padding: "15px",
         marginBottom: "10px",
