@@ -28,7 +28,7 @@ const TicketHeader = () => {
         lineHeight:"55px"
       }}
     >
-      <big style={{verticalAlign:"middle"}}>Ticket View</big> <KeyboardArrowDownIcon style={{padding: "15px", float:"right"}}fontSize="large" />
+      <big style={{verticalAlign:"middle"}}>Ticket View</big> <KeyboardArrowDownIcon style={{padding: "15px", float:"right"}} fontSize="large" />
     </div>
   );
 };
