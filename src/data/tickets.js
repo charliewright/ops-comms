@@ -10,4 +10,4 @@ const ticket1 = {
     closingPercentage: "%90"
   };
   
-  export const tickets = [ticket1]
+  export const tickets = [ticket1,ticket1,ticket1,ticket1,ticket1]
