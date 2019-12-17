@@ -17,7 +17,7 @@ export class ConversationThread extends React.Component {
     const oneItem = this.state.thread.slice(-1)[0]
     const fromOps = {
       color: oneItem.color,
-      sender: oneItem.color,
+      sender: oneItem.sender,
       time: new Date().toLocaleString().slice(12), // time, rather than date
       date: "Dec 12",
       comm: messageType,
