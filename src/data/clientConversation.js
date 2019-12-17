@@ -4,12 +4,12 @@ const fromClient = {
     time: "12:00 PM",
     date: "Dec 12",
     comm: "sms",
-    content: "Hey Divy, appreciate blah blah blah"
+    content: "Hey Meghna, appreciate blah blah blah"
   };
   
   const fromOps = {
     color: "lightblue",
-    sender: "Divy",
+    sender: "Meghna",
     time: "12:00 PM",
     date: "Dec 12",
     comm: "sms",

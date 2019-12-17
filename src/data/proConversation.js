@@ -4,12 +4,12 @@ const fromPro = {
   time: "12:00 PM",
   date: "Dec 12",
   comm: "email",
-  content: "Hey Divy, appreciate blah blah blah"
+  content: "Hey Meghna, appreciate blah blah blah"
 };
 
 const fromOps = {
   color: "lightgoldenrodyellow",
-  sender: "Divy",
+  sender: "Meghna",
   time: "12:00 PM",
   date: "Dec 12",
   comm: "email",
