@@ -3,7 +3,7 @@ const fromClient = {
     sender: "Client",
     time: "12:00 PM",
     date: "Dec 12",
-    comm: "sms",
+    comm: "SMS",
     content: "Hey Meghna, appreciate blah blah blah"
   };
   
@@ -12,7 +12,7 @@ const fromClient = {
     sender: "Meghna",
     time: "12:00 PM",
     date: "Dec 12",
-    comm: "sms",
+    comm: "SMS",
     content: "Hey Client, appreciate blah blah blah"
   };
   

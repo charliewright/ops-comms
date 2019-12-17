@@ -1,9 +1,8 @@
 import React from "react";
 import { Column, Row } from "./components/grid";
-import { clientConversation } from "./data/clientConversation";
-import { proConversation } from "./data/proConversation";
 import { ConversationThread } from "./components/conversationThread";
 import { TicketList } from "./components/ticketList";
+import {ticketInfo} from "./data/ticketInfo"
 import {ClientDetailsView} from "./components/clientDetails"
 
 import "./App.css";
@@ -12,7 +11,12 @@ import { ActionList } from "./components/actionList";
 class App extends React.Component {
   constructor(props) {
     super(props);
-    this.state = { toggleHotkeys: false };
+    debugger
+    this.state = { toggleHotkeys: false, selectedTicket : {...ticketInfo[0]}  };
+  }
+
+  changeTicket = (id) => {
+    this.setState({selectedTicket: {}})
   }
 
   keyPressed = e => {
@@ -43,11 +47,11 @@ class App extends React.Component {
           </Column>
           <Column>
             <ConversationThread
-              thread={clientConversation}
+              thread={this.state.selectedTicket.clientConversation}
             ></ConversationThread>
           </Column>
           <Column>
-            <ConversationThread thread={proConversation}></ConversationThread>
+            <ConversationThread thread={this.state.selectedTicket.proConversation}></ConversationThread>
           </Column>
           <Column class="half">
             {this.state.toggleHotkeys ? <ActionList/> : <ClientDetailsView/>}

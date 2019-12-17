@@ -13,7 +13,7 @@ const fromOps = {
   time: "12:00 PM",
   date: "Dec 12",
   comm: "email",
-  content: "Hey Client, appreciate blah blah blah"
+  content: "Hey Pro, appreciate blah blah blah"
 };
 
 export const proConversation = [fromPro, fromOps, fromPro, fromOps];
