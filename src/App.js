@@ -4,13 +4,9 @@ import { ConversationThread } from "./components/conversationThread";
 import { TicketList } from "./components/ticketList";
 import { ticketInfo } from "./data/ticketInfo";
 import { ClientDetailsView } from "./components/clientDetails";
-import { TextField } from "@material-ui/core";
-import PropTypes from "prop-types";
-import { withStyles } from "@material-ui/core/styles";
 import "./App.css";
 import { tickets } from "./data/tickets";
-
-import Modal from "@material-ui/core/Modal";
+import { HotkeyModal} from "./components/hotkeyModal"
 
 class App extends React.Component {
   constructor(props) {
@@ -32,7 +28,7 @@ class App extends React.Component {
 
   keyPressed = e => {
     // if you press the command key
-    if (e.keyCode == 91) {
+    if (e.keyCode == 17) {
       this.setState({ toggleHotkeys: !this.state.toggleHotkeys });
     }
   };
@@ -74,65 +70,4 @@ class App extends React.Component {
 export default App;
 
 
-const styles = {
-  root: {
-    // background: "black"
-    color: "white"
-  },
-  input: {
-    color: "white",
-    fontSize: "20px",
-    paddingLeft: "20px"
-  }
-};
 
-function CustomizedInputs(props) {
-  const { classes } = props;
-
-  return (
-    <TextField
-      // defaultValue="color"
-      style={{ width: "80%", padding: "10px"}}
-      autoFocus
-      className={classes.root}
-      InputProps={{
-        className: classes.input
-      }}
-    />
-  );
-}
-
-CustomizedInputs.propTypes = {
-  classes: PropTypes.object.isRequired
-};
-
-
-const WhiteTextField = withStyles(styles)(CustomizedInputs);
-
-const HotkeyModal = props => {
-  debugger;
-  return (
-    <Modal open={props.open}>
-      <div
-      class="modal"
-        style={{
-          backgroundColor: "black",
-          // textAlign: "center",
-          color: "#ECECEC",
-          width: "50%",
-          position: "absolute",
-          top: "25%",
-          left: "25%",
-          borderRadius: "2px"
-        }}
-      >
-        <h2 style={{ textAlign: "left", paddingLeft: "20px" }}>HMHQ</h2>
-        <WhiteTextField/>
-        <div class="hoverableAction" style={{fontSize: "20px", padding: "10px"}}>Clone a quote</div>
-        <div class="hoverableAction" style={{fontSize: "20px", padding: "10px"}}>AutoQuote >> Home Consultation</div>
-        <div class="hoverableAction" style={{fontSize: "20px", padding: "10px"}}>Handoff >> Coordination</div>
-        <div class="hoverableAction" style={{fontSize: "20px", padding: "10px"}}>Hold >> 1 Day</div>
-      </div>
-    </Modal>
-  );
-};
