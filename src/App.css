@@ -7,14 +7,32 @@
   outline-offset: none !important;
 }
 
+.modal:focus{
+  outline: none !important;
+  outline-offset: none !important;
+}
+
 .card {
   border-radius: 8px;
   box-shadow: 0 2px 10px 0 rgba(213, 213, 213, 0.5);
 }
 
+.body {
+  font-family: basis-grotesque-regular-pro
+}
+
 .App-link {
   color: #61dafb;
 } 
+
+.hoverableAction:hover{
+  background-color: #363636
+}
+
+.hoverableAction{
+  color: #ECECEC
+}
+
 
 @keyframes App-logo-spin {
   from {
