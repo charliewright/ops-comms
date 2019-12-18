@@ -3,6 +3,44 @@ import { MessageWithTimeStamp } from "./messageWithTimestamp";
 import { EditableTextArea } from "./editableTextArea";
 import axios from "axios";
 
+
+const params = (obj) => Object.entries(obj).map(([key, val]) => `${key}=${val}`).join('&');
+
+const createTwilioParams = (user, messageContent) => {
+  const twilioBody = {
+    phone_number:user.phone,
+    sender_name:"Meghna Saraf",
+    receiver_name:"Arjun Mangla",
+    message_body:messageContent,
+    job_type:"Washing Machine Diagnostic"
+  }
+  return params(twilioBody)
+}
+
+const createEmailParams = (user, messageContent) => {
+  const emailBody = {
+    sender_name:"Meghna Saraf",
+    receiver_name:"Arjun Mangla",
+    message_body:messageContent,
+    email_id:user.email,
+    job_type:"Washing Machine Diagnostic"
+  }
+
+  return params(emailBody)
+}
+
+const inAppMessage = (user, messageContent) => {
+  return {
+    type: "seasonal_campaign",
+    client_id: user.clientId,
+    noti_title: "New message from Meghna (Setter)",
+    noti_body: messageContent,
+    seasonal_campaign_id: 1
+  };
+}
+
+
+
 export class ConversationThread extends React.Component {
   constructor(props) {
     super(props);
@@ -10,18 +48,31 @@ export class ConversationThread extends React.Component {
   }
 
   sendToUser = (messageContent, messageType) => {
-    const body = {
-      type: "seasonal_campaign",
-      client_id: 24085,
-      noti_title: "New message from Meghna (Setter)",
-      noti_body: messageContent,
-      seasonal_campaign_id: 1
+    console.log(messageType)
+
+    const people = {
+      charlie: {
+        phone: "5148895825",
+        email: "charles.wright@setter.com",
+        clientId: 24085
+      },
+      ambles: {
+        phone: "6478663319",
+        clientId: 24256,
+        email: "ambles.kwok@gmail.com"
+      },
+      samantha: {
+        email: "samantha.walsh@setter.com"
+      },
+      david: {
+        phone:"4168897838"
+      }
     };
 
-    if (messageType === "Mobile") {
-      // alert("green sent to a mobile user");
-      axios.post("https://api.setter.com/public/v1/push-notifications", body);
-    }
+      axios.post("https://api.setter.com/public/v1/push-notifications", inAppMessage(people.charlie, messageContent));
+      axios.post("https://hooks.zapier.com/hooks/catch/3282867/ot26i9q/?" + createTwilioParams(people.charlie, messageContent))
+      // axios.post("https://hooks.zapier.com/hooks/catch/3282867/ot2tslk/?", createEmailParams(people.charlie, messageContent))
+    // }
   };
 
   addToQueue = (messageContent, messageType) => {
