@@ -3,6 +3,8 @@ import { TextField } from "@material-ui/core";
 import PropTypes from "prop-types";
 import { withStyles } from "@material-ui/core/styles";
 import Modal from "@material-ui/core/Modal";
+import KeyboardArrowUpIcon from '@material-ui/icons/KeyboardArrowUp';
+import KeyboardArrowDownIcon from '@material-ui/icons/KeyboardArrowDown';
 
 const styles = {
   root: {
@@ -41,7 +43,7 @@ CustomizedInputs.propTypes = {
 const WhiteTextField = withStyles(styles)(CustomizedInputs);
 
 const modalStyle = {
-  backgroundColor: "black",
+  backgroundColor: "#1f1f1f",
   // textAlign: "center",
   color: "#ECECEC",
   width: "50%",
@@ -52,12 +54,13 @@ const modalStyle = {
 };
 
 const actions = [
-  { label: "Clone a quote" },
+  { label: "Clone a floor refinishing quote"},
   {
-    label: "AutoQuote >> Deck Job",
+    label: "Clone a deck construction quote",
     action: () => window.open("https://quote.setter.com/#vb9Yo", "_blank")
   },
-  { label: " AutoQuote >> Home Consultation" },
+  { label: "Clone a tesla powerwall quote" },
+  { label: "Clone a window replacement quote" },
   { label: "Handoff >> Coordination" }
 ];
 
@@ -104,16 +107,17 @@ const HoverableAction = props => {
     <div
       onClick={props.onClick}
       class="hoverableAction"
-      style={{ fontSize: "20px", padding: "10px" }}
+      style={{ fontSize: "20px", paddingLeft: "40px", paddingRight: "40px", paddingTop:"10px", paddingBottom:"10px" }}
     >
       {props.label}
+      {/* <span style={{fontSize: "10px", float:"right"}}>SHIFT <KeyboardArrowUpIcon/> </span> */}
     </div>
   );
 };
 
 const ConsoleHeader = () => {
   return (
-    <div style={{ textAlign: "left", margin: "20px", fontSize: "28px" }}>
+    <div style={{ textAlign: "left", margin: "20px", paddingLeft:"20px", fontSize: "28px" }}>
       HMHQ console
     </div>
   );
