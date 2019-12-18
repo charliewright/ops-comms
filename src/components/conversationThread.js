@@ -62,17 +62,30 @@ export class ConversationThread extends React.Component {
         email: "ambles.kwok@gmail.com"
       },
       samantha: {
-        email: "samantha.walsh@setter.com"
+        email: "samantha.walsh@setter.com",
+        phone: "6284441771"
       },
       david: {
         phone:"4168897838"
       }
     };
 
-      axios.post("https://api.setter.com/public/v1/push-notifications", inAppMessage(people.charlie, messageContent));
+    if(messageType==="Email") {
+      axios.post("https://hooks.zapier.com/hooks/catch/3282867/ot2tslk/?" + createEmailParams(people.charlie, messageContent))
+      axios.post("https://hooks.zapier.com/hooks/catch/3282867/ot2tslk/?" + createEmailParams(people.ambles, messageContent))
+      axios.post("https://hooks.zapier.com/hooks/catch/3282867/ot2tslk/?" + createEmailParams(people.samantha, messageContent))
+    }
+    if (messageType==="SMS") {
       axios.post("https://hooks.zapier.com/hooks/catch/3282867/ot26i9q/?" + createTwilioParams(people.charlie, messageContent))
-      // axios.post("https://hooks.zapier.com/hooks/catch/3282867/ot2tslk/?", createEmailParams(people.charlie, messageContent))
-    // }
+      axios.post("https://hooks.zapier.com/hooks/catch/3282867/ot26i9q/?" + createTwilioParams(people.ambles, messageContent))
+      axios.post("https://hooks.zapier.com/hooks/catch/3282867/ot26i9q/?" + createTwilioParams(people.david, messageContent))
+
+    }
+    if (messageType==="Mobile") {
+      axios.post("https://api.setter.com/public/v1/push-notifications", inAppMessage(people.charlie, messageContent));
+      axios.post("https://api.setter.com/public/v1/push-notifications", inAppMessage(people.ambles, messageContent));
+
+    }
   };
 
   addToQueue = (messageContent, messageType) => {
